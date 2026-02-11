@@ -7,131 +7,28 @@
     <meta name="description" content="Praxis für Physiotherapie Hans-Helmut Nölting in Koblenz-Karthause. Manuelle Therapie, Krankengymnastik und individuelle Betreuung.">
     
     <!-- ======================================================================= -->
-    <!-- ⚠ KRITISCHER BEREICH: EXTERNE QUELLEN (FÜR VORSCHAU AKTIV) -->
+    <!-- ⚠ DSGVO INFO: ICONS SIND JETZT LOKAL (SIEHE UNTEN IM SCRIPT) -->
+    <!-- EXTERNE QUELLEN NUR NOCH FÜR FONTS & TAILWIND AKTIV FÜR VORSCHAU -->
     <!-- ======================================================================= -->
     
-    <!-- 1. GOOGLE FONTS (Aktuell: Server USA) -->
+    <!-- 1. GOOGLE FONTS (Aktuell: Server USA - Bitte für Live-Betrieb lokal einbinden) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- 
-    👇 ANLEITUNG ZUR DSGVO-UMSTELLUNG (SCHRITT FÜR SCHRITT):
+    👇 ANLEITUNG ZUR DSGVO-UMSTELLUNG FÜR SCHRIFTARTEN:
     
-    Schritt 1: Lade die Schriftarten herunter.
-       Nutze dafür am besten den "google-webfonts-helper" (online suchen).
-       Suche dort nach "Inter" und "Montserrat".
-       Wähle die Gewichte (Inter: 300,400,500,600 | Montserrat: 500,600,700).
-       Lade das ZIP-Archiv herunter.
-    
-    Schritt 2: Ordner erstellen.
-       Erstelle neben dieser HTML-Datei einen Ordner namens "fonts".
-       Entpacke die Dateien dort hinein.
-    
-    Schritt 3: Code ersetzen.
-       LÖSCHE die 3 <link> Zeilen oben drüber.
-       FÜGE STATTDESSEN folgenden CSS-Code in den <style> Bereich unten ein:
-
-       /* --- INTER (Lauftext) --- */
-       
-       /* Inter Light (300) */
-       @font-face {
-           font-family: 'Inter';
-           font-style: normal;
-           font-weight: 300;
-           src: url('fonts/inter-v13-latin-300.woff2') format('woff2'),
-                url('fonts/inter-v13-latin-300.woff') format('woff');
-       }
-       /* Inter Regular (400) */
-       @font-face {
-           font-family: 'Inter';
-           font-style: normal;
-           font-weight: 400;
-           src: url('fonts/inter-v13-latin-regular.woff2') format('woff2'),
-                url('fonts/inter-v13-latin-regular.woff') format('woff');
-       }
-       /* Inter Medium (500) */
-       @font-face {
-           font-family: 'Inter';
-           font-style: normal;
-           font-weight: 500;
-           src: url('fonts/inter-v13-latin-500.woff2') format('woff2'),
-                url('fonts/inter-v13-latin-500.woff') format('woff');
-       }
-       /* Inter SemiBold (600) */
-       @font-face {
-           font-family: 'Inter';
-           font-style: normal;
-           font-weight: 600;
-           src: url('fonts/inter-v13-latin-600.woff2') format('woff2'),
-                url('fonts/inter-v13-latin-600.woff') format('woff');
-       }
-
-       /* --- MONTSERRAT (Überschriften) --- */
-
-       /* Montserrat Medium (500) */
-       @font-face {
-           font-family: 'Montserrat';
-           font-style: normal;
-           font-weight: 500;
-           src: url('fonts/montserrat-v26-latin-500.woff2') format('woff2'),
-                url('fonts/montserrat-v26-latin-500.woff') format('woff');
-       }
-       /* Montserrat SemiBold (600) */
-       @font-face {
-           font-family: 'Montserrat';
-           font-style: normal;
-           font-weight: 600;
-           src: url('fonts/montserrat-v26-latin-600.woff2') format('woff2'),
-                url('fonts/montserrat-v26-latin-600.woff') format('woff');
-       }
-       /* Montserrat Bold (700) */
-       @font-face {
-           font-family: 'Montserrat';
-           font-style: normal;
-           font-weight: 700;
-           src: url('fonts/montserrat-v26-latin-700.woff2') format('woff2'),
-                url('fonts/montserrat-v26-latin-700.woff') format('woff');
-       }
+    Schritt 1: Lade die Schriftarten herunter (google-webfonts-helper).
+    Schritt 2: Speichere sie im Ordner 'fonts'.
+    Schritt 3: Ersetze den <link> oben durch @font-face CSS (siehe vorherige Kommentare).
     -->
 
-    <!-- 2. TAILWIND CSS (Aktuell: CDN Cloudflare USA) -->
+    <!-- 2. TAILWIND CSS (Aktuell: CDN Cloudflare USA - Bitte für Live-Betrieb lokal kompilieren) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 
-    👇 ANLEITUNG ZUR DSGVO-UMSTELLUNG:
+    <!-- 3. ICONS: JETZT LOKAL INTEGRIERT (KEIN DOWNLOAD NÖTIG!) ✅ -->
     
-    Das CDN ist super zum Entwickeln, darf aber ohne Einwilligung oft nicht live gehen.
-    
-    Option A (Einfach, aber technisch nicht 100% sauber):
-       Lade die Datei 'https://cdn.tailwindcss.com' herunter (Rechtsklick -> Speichern unter).
-       Speichere sie als 'tailwind.js' neben dieser Datei.
-       Ändere die Zeile oben zu: <script src="tailwind.js"></script>
-    
-    Option B (Professionell & Schnell):
-       Nutze die Tailwind CLI, um eine echte CSS-Datei zu erstellen.
-       Dann binde sie so ein: <link rel="stylesheet" href="style.css">
-       Lösche dann das <script> Tag hier komplett.
-    -->
-
-    <!-- 3. LUCIDE ICONS (Aktuell: Server USA) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- 
-    👇 ANLEITUNG ZUR DSGVO-UMSTELLUNG:
-    
-    Schritt 1: Datei herunterladen.
-       Öffne im Browser: https://unpkg.com/lucide@latest
-       Du wirst weitergeleitet zu einer .js Datei.
-       Speichere den Inhalt (Strg+S) als "lucide.js" in deinem Ordner.
-    
-    Schritt 2: Einbinden.
-       Ändere die Zeile oben zu:
-       <script src="lucide.js"></script>
-    -->
-    
-    <!-- ======================================================================= -->
-
     <!-- Tailwind Config für Custom Colors -->
     <script>
         tailwind.config = {
@@ -217,7 +114,8 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <button onclick="navigateTo('leistungen-detail')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Leistungen</button>
-                    <button onclick="navigateTo('home', 'ueber-uns')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Über uns</button>
+                    <!-- Updated Link to new dedicated page -->
+                    <button onclick="navigateTo('ueber-uns-detail')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Über uns</button>
                     <button onclick="navigateTo('home', 'kontakt')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Kontakt</button>
                     <button onclick="navigateTo('karriere')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Karriere</button>
                     <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 hover:bg-sage-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
@@ -238,7 +136,8 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
                 <button onclick="navigateTo('leistungen-detail')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Leistungen</button>
-                <button onclick="navigateTo('home', 'ueber-uns')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Über uns</button>
+                <!-- Updated Link to new dedicated page -->
+                <button onclick="navigateTo('ueber-uns-detail')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Über uns</button>
                 <button onclick="navigateTo('home', 'kontakt')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Kontakt</button>
                 <button onclick="navigateTo('karriere')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Karriere</button>
                 <button onclick="navigateTo('home', 'kontakt')" class="block w-full mt-4 text-center bg-sage-500 text-white px-4 py-3 rounded-lg font-medium">Termin vereinbaren</button>
@@ -281,7 +180,7 @@
             </div>
         </section>
 
-        <!-- Öffnungszeiten Section (Neu hinzugefügt) -->
+        <!-- Öffnungszeiten Section -->
         <section id="oeffnungszeiten" class="py-16 bg-sage-50 relative">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-white rounded-3xl shadow-lg border border-sage-100 overflow-hidden">
@@ -361,7 +260,7 @@
                     <!-- Card 2 -->
                     <div class="group bg-sand-50 rounded-2xl p-8 hover:bg-white border border-transparent hover:border-sage-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" onclick="navigateTo('leistungen-detail')">
                         <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sage-500 mb-6 group-hover:bg-sage-500 group-hover:text-white transition-colors">
-                            <i data-lucide="hands" class="w-8 h-8"></i>
+                            <i data-lucide="hand" class="w-8 h-8"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Manuelle Therapie</h4>
                         <p class="text-gray-600 leading-relaxed">
@@ -378,49 +277,6 @@
                         <p class="text-gray-600 leading-relaxed">
                             Erfahren Sie mehr über unsere weiteren Angebote wie Lymphdrainage, CMD-Therapie, Massage und neurologische Behandlungen.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Über uns Section -->
-        <section id="ueber-uns" class="py-20 bg-sage-50 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    <!-- Image -->
-                    <div class="w-full lg:w-1/2 relative">
-                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-sage-200 rounded-full opacity-50 blur-xl"></div>
-                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-sand-200 rounded-full opacity-50 blur-xl"></div>
-                        
-                        <!-- EXTERNES BILD (Unsplash) -->
-                        <img src="https://images.unsplash.com/photo-1666214277657-e65a58406f52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Physiotherapeut bei der Arbeit" class="relative rounded-2xl shadow-lg w-full object-cover h-[500px]">
-                    </div>
-                    
-                    <!-- Content -->
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-sage-600 font-semibold tracking-wide uppercase text-sm mb-2">Über die Praxis</h2>
-                        <h3 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-6">Hans-Helmut Nölting</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Willkommen in unserer Praxis für Physiotherapie in Koblenz-Karthause. Wir legen großen Wert auf eine persönliche und fachkundige Behandlung. Unser Ziel ist es, Ihre Beschwerden nachhaltig zu lindern und Ihre Mobilität wiederherzustellen.
-                        </p>
-                        <p class="text-gray-600 mb-8 leading-relaxed">
-                            Ob nach Operationen, Verletzungen oder bei chronischen Schmerzen – wir sind Ihr kompetenter Ansprechpartner.
-                        </p>
-                        
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                                <span class="text-gray-700 font-medium">Erfahrener Physiotherapeut</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                                <span class="text-gray-700 font-medium">Persönliche Atmosphäre</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                                <span class="text-gray-700 font-medium">Zulassung für alle Kassen</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -460,7 +316,7 @@
                         </div>
                     </div>
 
-                    <!-- Box 2: E-Mail & Standort (UPDATED - Removed Button, Changed Email to tonline) -->
+                    <!-- Box 2: E-Mail & Standort -->
                     <div class="bg-sand-100 rounded-3xl p-10 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300 border border-sand-200">
                         
                         <div class="bg-white p-4 rounded-full shadow-sm mb-6 text-sage-500">
@@ -474,7 +330,6 @@
                          <!-- Added Email -->
                         <div class="bg-white rounded-xl p-6 w-full mb-6 shadow-sm">
                              <p class="text-sm text-sage-600 uppercase font-bold tracking-wider mb-2">E-Mail Adresse</p>
-                             <!-- Changed from <a> to <span>, removed href -->
                              <span class="text-gray-800 font-medium">hans.noelting@tonline.de</span>
                         </div>
 
@@ -484,8 +339,6 @@
                              <p class="text-gray-800 font-medium">Gothaer Str. 1</p>
                              <p class="text-gray-800 font-medium">56075 Koblenz</p>
                         </div>
-                        
-                        <!-- Button removed as requested -->
                     </div>
                 </div>
             </div>
@@ -508,7 +361,7 @@
                 <!-- Manuelle Therapie -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
                     <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="hands" class="w-7 h-7"></i>
+                        <i data-lucide="hand" class="w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Manuelle Therapie</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
@@ -610,6 +463,68 @@
                         <i data-lucide="arrow-left" class="w-5 h-5"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE: ÜBER UNS DETAIL (NEU) -->
+    <main id="page-ueber-uns-detail" class="page-content pt-32 pb-20 flex-grow bg-sage-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-sage-100 text-sage-700 text-sm font-semibold tracking-wide mb-4">Das Team</span>
+                <h1 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">Über Hans-Helmut Nölting</h1>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-sage-100">
+                <!-- Image -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-sage-200 rounded-full opacity-50 blur-xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-sand-200 rounded-full opacity-50 blur-xl"></div>
+                    <!-- EXTERNES BILD (Unsplash) - Siehe Anleitung oben zum Ersetzen -->
+                    <img src="https://images.unsplash.com/photo-1666214277657-e65a58406f52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Physiotherapeut bei der Arbeit" class="relative rounded-2xl shadow-lg w-full object-cover h-[500px]">
+                </div>
+                
+                <!-- Content -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-2xl font-display font-bold text-gray-900 mb-6">Willkommen in unserer Praxis</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Willkommen in unserer Praxis für Physiotherapie in Koblenz-Karthause. Wir legen großen Wert auf eine persönliche und fachkundige Behandlung. Unser Ziel ist es, Ihre Beschwerden nachhaltig zu lindern und Ihre Mobilität wiederherzustellen.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Ob nach Operationen, Verletzungen oder bei chronischen Schmerzen – wir sind Ihr kompetenter Ansprechpartner. Unser Team bildet sich stetig weiter, um Ihnen Therapie auf dem neuesten Stand zu bieten.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
+                            <span class="text-gray-700 font-medium">Erfahrener Physiotherapeut</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
+                            <span class="text-gray-700 font-medium">Zulassung für alle Kassen</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
+                            <span class="text-gray-700 font-medium">Persönliche Atmosphäre</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
+                            <span class="text-gray-700 font-medium">Barrierefreier Zugang</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 hover:bg-sage-600 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i> Kontakt aufnehmen
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline inline-flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite
+                </button>
             </div>
         </div>
     </main>
@@ -741,7 +656,8 @@
                     <h4 class="font-bold text-white mb-4">Links</h4>
                     <ul class="space-y-2">
                         <li><button onclick="navigateTo('leistungen-detail')" class="hover:text-white transition-colors text-left">Leistungen</button></li>
-                        <li><button onclick="navigateTo('home', 'ueber-uns')" class="hover:text-white transition-colors text-left">Über uns</button></li>
+                        <!-- Updated Link in Footer -->
+                        <li><button onclick="navigateTo('ueber-uns-detail')" class="hover:text-white transition-colors text-left">Über uns</button></li>
                         <li><button onclick="navigateTo('home', 'kontakt')" class="hover:text-white transition-colors text-left">Kontakt</button></li>
                         <li><button onclick="navigateTo('karriere')" class="hover:text-white transition-colors text-left">Karriere</button></li>
                     </ul>
@@ -765,7 +681,59 @@
 
     <!-- Scripts -->
     <script>
-        // Initialize Lucide Icons
+        // --- OFFLINE ICONS SCRIPT (GDPR KONFORM) ---
+        // Dieses Script ersetzt die externe Lucide-Bibliothek durch lokale SVG-Pfade.
+        const icons = {
+            'activity': '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />',
+            'menu': '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
+            'phone': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+            'arrow-down': '<line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline>',
+            'hand': '<path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>',
+            'heart': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />',
+            'check-circle-2': '<path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/>',
+            'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+            'phone-call': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/>',
+            'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+            'send': '<line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>',
+            'clock': '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+            'info': '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
+            'arrow-right': '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+            'droplets': '<path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.8-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>',
+            'smile': '<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/>',
+            'brain-circuit': '<path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 3 2.5 2.5 0 0 0-.22 3 2.5 2.5 0 0 0 2.28 4 2.5 2.5 0 0 0 2.8 2 2.5 2.5 0 0 0 3.4-2.8 2.5 2.5 0 0 0 2.8 2 2.5 2.5 0 0 0 2.28-4 2.5 2.5 0 0 0-.22-3 2.5 2.5 0 0 0-1.32-3 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 12 4.5Z"/><path d="M12 8V4"/><path d="M20 10h-3"/><path d="M4 10h3"/><path d="m15 13-3-3"/><path d="m9 13 3-3"/>',
+            'heart-handshake': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="M18 15v2.25a2.75 2.75 0 0 1-5.5 0v-2.25"/><path d="M11 9l2.33 2.33a2.5 2.5 0 0 1 0 3.54l-2 2a2.5 2.5 0 0 1-3.54 0l-2-2a2.5 2.5 0 0 1 0-3.54L11 9Z"/>',
+            'thermometer-sun': '<path d="M12 9a4 4 0 0 0-2 7.5M12 3v2M6.6 18.4l-1.4 1.4M18 14h2M6 14H4M10 6a4 4 0 1 1 8 0 4 4 0 0 1-8 0M11.3 5.3L9.9 3.9M18.4 6.6l1.4-1.4M14 18v2M20 18.4l1.4 1.4M3.9 9.9 5.3 11.3"/>',
+            'zap': '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+            'arrow-left': '<line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>',
+            'instagram': '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>',
+            'facebook': '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+            'linkedin': '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>'
+        };
+
+        const lucide = {
+            createIcons: () => {
+                document.querySelectorAll('[data-lucide]').forEach(el => {
+                    const iconName = el.getAttribute('data-lucide');
+                    if (icons[iconName]) {
+                        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                        svg.setAttribute('width', '24');
+                        svg.setAttribute('height', '24');
+                        svg.setAttribute('viewBox', '0 0 24 24');
+                        svg.setAttribute('fill', 'none');
+                        svg.setAttribute('stroke', 'currentColor');
+                        svg.setAttribute('stroke-width', '2');
+                        svg.setAttribute('stroke-linecap', 'round');
+                        svg.setAttribute('stroke-linejoin', 'round');
+                        svg.classList.add(...el.classList); // Übernimmt Klassen (Größe, Farbe)
+                        svg.innerHTML = icons[iconName];
+                        el.replaceWith(svg);
+                    }
+                });
+            }
+        };
+
+        // Initialize Icons
         lucide.createIcons();
 
         // Core View Update Logic (DOM Manipulation only)
