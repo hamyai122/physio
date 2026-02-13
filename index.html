@@ -3,33 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physiotherapie Nölting - Ihre Praxis in Koblenz</title>
-    <meta name="description" content="Praxis für Physiotherapie Hans-Helmut Nölting in Koblenz-Karthause. Manuelle Therapie, Krankengymnastik und individuelle Betreuung.">
+    <title>Physio Fit - Ihre Praxis für Bewegung</title>
+    <meta name="description" content="Moderne Physiotherapie Praxis für Manuelle Therapie, Krankengymnastik und individuelle Betreuung.">
     
     <!-- ======================================================================= -->
-    <!-- ⚠ DSGVO INFO: ICONS SIND JETZT LOKAL (SIEHE UNTEN IM SCRIPT) -->
-    <!-- EXTERNE QUELLEN NUR NOCH FÜR FONTS & TAILWIND AKTIV FÜR VORSCHAU -->
+    <!-- ⚠ DSGVO INFO: -->
+    <!-- 1. ICONS: LOKAL INTEGRIERT (siehe Script unten) - ✅ KONFORM -->
+    <!-- 2. FONTS: SYSTEM-STANDARDS (keine Google Fonts) - ✅ KONFORM -->
+    <!-- 3. CSS: TAILWIND CDN (Für Live-Betrieb lokal empf.) - ⚠ EXTERN -->
     <!-- ======================================================================= -->
     
-    <!-- 1. GOOGLE FONTS (Aktuell: Server USA - Bitte für Live-Betrieb lokal einbinden) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- 
-    👇 ANLEITUNG ZUR DSGVO-UMSTELLUNG FÜR SCHRIFTARTEN:
-    
-    Schritt 1: Lade die Schriftarten herunter (google-webfonts-helper).
-    Schritt 2: Speichere sie im Ordner 'fonts'.
-    Schritt 3: Ersetze den <link> oben durch @font-face CSS (siehe vorherige Kommentare).
-    -->
-
-    <!-- 2. TAILWIND CSS (Aktuell: CDN Cloudflare USA - Bitte für Live-Betrieb lokal kompilieren) -->
+    <!-- 2. TAILWIND CSS (Aktuell: CDN Cloudflare USA) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 3. ICONS: JETZT LOKAL INTEGRIERT (KEIN DOWNLOAD NÖTIG!) ✅ -->
-    
-    <!-- Tailwind Config für Custom Colors -->
+    <!-- Tailwind Config für Custom Colors & System Fonts -->
     <script>
         tailwind.config = {
             theme: {
@@ -54,8 +41,9 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
+                        // Verwendung von System-Standardschriftarten für maximale Performance & DSGVO-Konformität
+                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+                        display: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -63,14 +51,12 @@
     </script>
 
     <style>
-        /* Custom Utilities */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
-        /* Smooth fade-in animation */
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
@@ -88,7 +74,6 @@
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
         
-        /* Utility to hide pages */
         .page-content {
             display: none;
         }
@@ -108,13 +93,12 @@
                     <div class="bg-sage-500 text-white p-2 rounded-lg">
                         <i data-lucide="activity" class="w-6 h-6"></i>
                     </div>
-                    <span class="font-display font-bold text-xl text-sage-800 tracking-tight">Physio<span class="text-sage-500">Nölting</span></span>
+                    <span class="font-display font-bold text-xl text-sage-800 tracking-tight">Physio<span class="text-sage-500">Fit</span></span>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <button onclick="navigateTo('leistungen-detail')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Leistungen</button>
-                    <!-- Updated Link to new dedicated page -->
                     <button onclick="navigateTo('ueber-uns-detail')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Über uns</button>
                     <button onclick="navigateTo('home', 'kontakt')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Kontakt</button>
                     <button onclick="navigateTo('karriere')" class="text-gray-600 hover:text-sage-600 font-medium transition-colors">Karriere</button>
@@ -132,11 +116,10 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
                 <button onclick="navigateTo('leistungen-detail')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Leistungen</button>
-                <!-- Updated Link to new dedicated page -->
                 <button onclick="navigateTo('ueber-uns-detail')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Über uns</button>
                 <button onclick="navigateTo('home', 'kontakt')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Kontakt</button>
                 <button onclick="navigateTo('karriere')" class="block w-full text-left px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-sage-600 hover:bg-sage-50">Karriere</button>
@@ -150,18 +133,17 @@
         <!-- Hero Section -->
         <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <!-- EXTERNES BILD (Unsplash) -->
-                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Physiotherapie Behandlung" class="w-full h-full object-cover object-center opacity-20">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Physiotherapie" class="w-full h-full object-cover object-center opacity-20">
                 <div class="absolute inset-0 bg-gradient-to-b from-sand-50/80 via-sand-50/50 to-sand-50"></div>
             </div>
 
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="max-w-3xl mx-auto">
                     <span class="inline-block py-1 px-3 rounded-full bg-sage-100 text-sage-700 text-sm font-semibold tracking-wide mb-6 fade-in-up">
-                        Willkommen bei Hans-Helmut Nölting
+                        Willkommen bei Physio Fit
                     </span>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 mb-6 leading-tight fade-in-up delay-100">
-                        Ihre Gesundheit in <span class="text-sage-500">Koblenz</span>
+                        Ihre Gesundheit in <span class="text-sage-500">besten Händen</span>
                     </h1>
                     <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed fade-in-up delay-200">
                         Individuelle Physiotherapie und Krankengymnastik in persönlicher Atmosphäre. Wir unterstützen Sie auf Ihrem Weg zu mehr Beweglichkeit und Wohlbefinden.
@@ -237,7 +219,7 @@
             </div>
         </section>
 
-        <!-- Leistungen Section (Vorschau auf Home) -->
+        <!-- Leistungen Vorschau -->
         <section id="leistungen" class="py-20 bg-white relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
@@ -246,43 +228,40 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
                     <div class="group bg-sand-50 rounded-2xl p-8 hover:bg-white border border-transparent hover:border-sage-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" onclick="navigateTo('leistungen-detail')">
                         <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sage-500 mb-6 group-hover:bg-sage-500 group-hover:text-white transition-colors">
                             <i data-lucide="activity" class="w-8 h-8"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Krankengymnastik</h4>
                         <p class="text-gray-600 leading-relaxed">
-                            Gezielte Übungen zur Verbesserung der Bewegungs- und Funktionsfähigkeit des Körpers, individuell auf Ihre Beschwerden abgestimmt.
+                            Gezielte Übungen zur Verbesserung der Bewegungs- und Funktionsfähigkeit des Körpers.
                         </p>
                     </div>
 
-                    <!-- Card 2 -->
                     <div class="group bg-sand-50 rounded-2xl p-8 hover:bg-white border border-transparent hover:border-sage-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" onclick="navigateTo('leistungen-detail')">
                         <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sage-500 mb-6 group-hover:bg-sage-500 group-hover:text-white transition-colors">
                             <i data-lucide="hand" class="w-8 h-8"></i>
                         </div>
                         <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Manuelle Therapie</h4>
                         <p class="text-gray-600 leading-relaxed">
-                            Spezielle Handgrifftechniken zur Untersuchung und Behandlung von Funktionsstörungen am Bewegungsapparat (Gelenke, Muskeln und Nerven).
+                            Spezielle Handgrifftechniken zur Untersuchung und Behandlung von Funktionsstörungen.
                         </p>
                     </div>
 
-                    <!-- Card 3 -->
                     <div class="group bg-sand-50 rounded-2xl p-8 hover:bg-white border border-transparent hover:border-sage-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" onclick="navigateTo('leistungen-detail')">
                         <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sage-500 mb-6 group-hover:bg-sage-500 group-hover:text-white transition-colors">
                             <i data-lucide="heart" class="w-8 h-8"></i>
                         </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Alle Leistungen ansehen</h4>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3 font-display">Alle Leistungen</h4>
                         <p class="text-gray-600 leading-relaxed">
-                            Erfahren Sie mehr über unsere weiteren Angebote wie Lymphdrainage, CMD-Therapie, Massage und neurologische Behandlungen.
+                            Erfahren Sie mehr über Lymphdrainage, CMD-Therapie, Massage und neurologische Behandlungen.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Kontakt Section (UPDATED) -->
+        <!-- Kontakt Section -->
         <section id="kontakt" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -294,50 +273,33 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                    
-                    <!-- Box 1: Telefon -->
                     <div class="bg-sage-50 rounded-3xl p-10 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300 border border-sage-100">
                         <div class="bg-white p-4 rounded-full shadow-sm mb-6 text-sage-500">
                             <i data-lucide="phone" class="w-10 h-10"></i>
                         </div>
                         <h4 class="text-2xl font-bold text-gray-900 mb-3 font-display">Telefonisch</h4>
-                        <p class="text-gray-600 mb-8 flex-grow">
-                            Rufen Sie uns an, um einen Termin zu vereinbaren. Sollten wir in Behandlung sein, sprechen Sie bitte auf den Anrufbeantworter.
-                        </p>
                         <div class="bg-white rounded-xl p-6 w-full mb-6 shadow-sm">
                              <p class="text-sm text-sage-600 uppercase font-bold tracking-wider mb-2">Sprechzeiten</p>
                              <p class="text-gray-800 font-medium">Mo - Fr: Termine nach Vereinbarung</p>
-                             <p class="text-gray-500 text-sm mt-1">Bitte vereinbaren Sie vorab telefonisch einen Termin.</p>
                         </div>
-                        <!-- Changed from <a> to <div>, removed href and hover effects -->
                         <div class="w-full bg-sage-500 text-white font-bold py-4 rounded-xl shadow-md flex items-center justify-center gap-2 cursor-default">
                             <i data-lucide="phone-call" class="w-5 h-5"></i>
-                            0261 / 56 57 5
+                            030 / 123 456 78
                         </div>
                     </div>
 
-                    <!-- Box 2: E-Mail & Standort -->
                     <div class="bg-sand-100 rounded-3xl p-10 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300 border border-sand-200">
-                        
                         <div class="bg-white p-4 rounded-full shadow-sm mb-6 text-sage-500">
                             <i data-lucide="mail" class="w-10 h-10"></i>
                         </div>
                         <h4 class="text-2xl font-bold text-gray-900 mb-3 font-display">Per E-Mail</h4>
-                        <p class="text-gray-600 mb-8 flex-grow">
-                            Schreiben Sie uns gerne eine E-Mail für Terminwünsche oder Fragen.
-                        </p>
-
-                         <!-- Added Email -->
                         <div class="bg-white rounded-xl p-6 w-full mb-6 shadow-sm">
                              <p class="text-sm text-sage-600 uppercase font-bold tracking-wider mb-2">E-Mail Adresse</p>
-                             <span class="text-gray-800 font-medium">hans.noelting@tonline.de</span>
+                             <span class="text-gray-800 font-medium">info@physiofit-muster.de</span>
                         </div>
-
-                        <!-- Restored Location Info -->
                         <div class="bg-white rounded-xl p-6 w-full shadow-sm">
                              <p class="text-sm text-sage-600 uppercase font-bold tracking-wider mb-2">Standort</p>
-                             <p class="text-gray-800 font-medium">Gothaer Str. 1</p>
-                             <p class="text-gray-800 font-medium">56075 Koblenz</p>
+                             <p class="text-gray-800 font-medium">Musterstraße 123, 10115 Berlin</p>
                         </div>
                     </div>
                 </div>
@@ -345,186 +307,94 @@
         </section>
     </main>
 
-    <!-- PAGE: LEISTUNGEN DETAIL (NEU) -->
+    <!-- PAGE: LEISTUNGEN DETAIL -->
     <main id="page-leistungen-detail" class="page-content pt-32 pb-20 flex-grow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="inline-block py-1 px-3 rounded-full bg-sage-100 text-sage-700 text-sm font-semibold tracking-wide mb-4">Umfassendes Angebot</span>
                 <h1 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">Unsere Leistungen im Überblick</h1>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Hier finden Sie eine Übersicht unserer therapeutischen Leistungen. Unser Team von erfahrenen Physiotherapeuten arbeitet eng mit Ihnen zusammen, um individuelle Behandlungspläne zu entwickeln.
-                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                
-                <!-- Manuelle Therapie -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="hand" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="hand" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Manuelle Therapie</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Gezielte Handgriffe und Mobilisationstechniken zur Behandlung von Gelenk- und Wirbelsäulenbeschwerden sowie zur Verbesserung der Beweglichkeit.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Gezielte Handgriffe und Mobilisationstechniken zur Behandlung von Gelenk- und Wirbelsäulenbeschwerden.</p>
                 </div>
-
-                <!-- Krankengymnastik -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="activity" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="activity" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Krankengymnastik</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Individuell angepasste Übungen zur Stärkung der Muskulatur, Verbesserung der Koordination und Förderung der Beweglichkeit.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Individuell angepasste Übungen zur Stärkung der Muskulatur und Förderung der Beweglichkeit.</p>
                 </div>
-
-                <!-- Lymphdrainage -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="droplets" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="droplets" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Manuelle Lymphdrainage</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Sanfte Massagetechnik zur Entstauung des Gewebes und Förderung des Lymphflusses, besonders geeignet bei Schwellungen und Ödemen.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Sanfte Massagetechnik zur Entstauung des Gewebes und Förderung des Lymphflusses.</p>
                 </div>
-
-                <!-- CMD -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="smile" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="smile" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">CMD-Therapie</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Spezialisierte Behandlung von craniomandibulären Dysfunktionen, um Kiefer- und Gesichtsschmerzen zu lindern sowie die Kieferfunktion zu verbessern.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Spezialisierte Behandlung von Kiefergelenksbeschwerden und craniomandibulären Dysfunktionen.</p>
                 </div>
-
-                <!-- Neurologie -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="brain-circuit" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="brain-circuit" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">KG Neuro (Bobath/PNF)</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Therapeutische Übungen und Behandlungen zur Rehabilitation nach neurologischen Erkrankungen (z.B. Schlaganfall, MS, Parkinson).
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Rehabilitation nach neurologischen Erkrankungen wie Schlaganfall, MS oder Parkinson.</p>
                 </div>
-
-                <!-- Massage -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="heart-handshake" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="heart-handshake" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Massage</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Verschiedene Massagearten zur Lockerung verspannter Muskulatur, Verbesserung der Durchblutung und Förderung der Entspannung.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Lockerung verspannter Muskulatur, Verbesserung der Durchblutung und Entspannung.</p>
                 </div>
-
-                <!-- Wärmetherapie -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="thermometer-sun" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="thermometer-sun" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Wärmetherapie</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Anwendungen mit Wärme (Fango, Heißluft) zur Schmerzlinderung, Muskelentspannung und Förderung der Durchblutung.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Anwendungen mit Fango oder Heißluft zur Schmerzlinderung und Muskelentspannung.</p>
                 </div>
-
-                <!-- Elektrotherapie -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6">
-                        <i data-lucide="zap" class="w-7 h-7"></i>
-                    </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                    <div class="w-12 h-12 bg-sage-50 rounded-xl flex items-center justify-center text-sage-500 mb-6"><i data-lucide="zap" class="w-7 h-7"></i></div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 font-display">Elektrotherapie</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        Einsatz von elektrischen Reizen zur Schmerzlinderung, Muskelstimulation und Förderung der Heilung bei verschiedenen Beschwerden.
-                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm">Einsatz von elektrischen Reizen zur Schmerzlinderung und Muskelstimulation.</p>
                 </div>
             </div>
 
-            <!-- CTA Section -->
             <div class="bg-sage-50 rounded-3xl p-8 md:p-12 text-center border border-sage-100">
                 <h3 class="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-4">Ihr persönlicher Therapieplan</h3>
-                <p class="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Wir legen großen Wert darauf, auf Ihre persönlichen Bedürfnisse einzugehen und einen maßgeschneiderten Therapieplan zu erstellen. Vereinbaren Sie gerne einen Termin, um mehr über unsere Leistungen zu erfahren und Ihren persönlichen Therapieplan zu erstellen. Wir freuen uns darauf, Ihnen zu helfen und Sie auf Ihrem Weg zu mehr Gesundheit und Wohlbefinden zu begleiten!
-                </p>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Vereinbaren Sie gerne einen Termin, um mehr über unsere Leistungen zu erfahren. Wir freuen uns darauf, Sie zu begleiten!</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 hover:bg-sage-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
-                        <span>Termin vereinbaren</span>
-                        <i data-lucide="phone" class="w-5 h-5"></i>
-                    </button>
-                    <button onclick="navigateTo('home')" class="bg-white hover:bg-gray-50 text-sage-700 border border-sage-200 px-8 py-4 rounded-full font-medium text-lg transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2">
-                        <span>Zurück zur Startseite</span>
-                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
-                    </button>
+                    <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 hover:bg-sage-600 text-white px-8 py-4 rounded-full font-medium shadow-lg">Termin vereinbaren</button>
+                    <button onclick="navigateTo('home')" class="bg-white text-sage-700 border border-sage-200 px-8 py-4 rounded-full font-medium shadow-sm">Zurück zur Startseite</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- PAGE: ÜBER UNS DETAIL (NEU) -->
+    <!-- PAGE: ÜBER UNS DETAIL -->
     <main id="page-ueber-uns-detail" class="page-content pt-32 pb-20 flex-grow bg-sage-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="inline-block py-1 px-3 rounded-full bg-sage-100 text-sage-700 text-sm font-semibold tracking-wide mb-4">Das Team</span>
-                <h1 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">Über Hans-Helmut Nölting</h1>
+                <h1 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">Über unsere Praxis</h1>
             </div>
 
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-sage-100">
-                <!-- Image -->
                 <div class="w-full lg:w-1/2 relative">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-sage-200 rounded-full opacity-50 blur-xl"></div>
-                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-sand-200 rounded-full opacity-50 blur-xl"></div>
-                    <!-- EXTERNES BILD (Unsplash) - Siehe Anleitung oben zum Ersetzen -->
-                    <img src="https://images.unsplash.com/photo-1666214277657-e65a58406f52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Physiotherapeut bei der Arbeit" class="relative rounded-2xl shadow-lg w-full object-cover h-[500px]">
+                    <img src="https://images.unsplash.com/photo-1666214277657-e65a58406f52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Praxis Team" class="relative rounded-2xl shadow-lg w-full object-cover h-[500px]">
                 </div>
-                
-                <!-- Content -->
                 <div class="w-full lg:w-1/2">
                     <h2 class="text-2xl font-display font-bold text-gray-900 mb-6">Willkommen in unserer Praxis</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Willkommen in unserer Praxis für Physiotherapie in Koblenz-Karthause. Wir legen großen Wert auf eine persönliche und fachkundige Behandlung. Unser Ziel ist es, Ihre Beschwerden nachhaltig zu lindern und Ihre Mobilität wiederherzustellen.
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Ob nach Operationen, Verletzungen oder bei chronischen Schmerzen – wir sind Ihr kompetenter Ansprechpartner. Unser Team bildet sich stetig weiter, um Ihnen Therapie auf dem neuesten Stand zu bieten.
-                    </p>
-                    
+                    <p class="text-gray-600 mb-6 leading-relaxed">Wir legen großen Wert auf eine persönliche und fachkundige Behandlung. Unser Ziel ist es, Ihre Beschwerden nachhaltig zu lindern und Ihre Mobilität wiederherzustellen.</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                            <span class="text-gray-700 font-medium">Erfahrener Physiotherapeut</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                            <span class="text-gray-700 font-medium">Zulassung für alle Kassen</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                            <span class="text-gray-700 font-medium">Persönliche Atmosphäre</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i>
-                            <span class="text-gray-700 font-medium">Barrierefreier Zugang</span>
-                        </div>
+                        <div class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i><span class="text-gray-700 font-medium">Erfahrenes Team</span></div>
+                        <div class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i><span class="text-gray-700 font-medium">Alle Kassen</span></div>
+                        <div class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i><span class="text-gray-700 font-medium">Persönlich</span></div>
+                        <div class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-sage-500 w-5 h-5"></i><span class="text-gray-700 font-medium">Barrierefrei</span></div>
                     </div>
-
-                    <div class="flex gap-4">
-                        <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 hover:bg-sage-600 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i> Kontakt aufnehmen
-                        </button>
-                    </div>
+                    <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 text-white px-6 py-3 rounded-lg font-medium shadow-md">Kontakt aufnehmen</button>
                 </div>
             </div>
-            
             <div class="mt-12 text-center">
-                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline inline-flex items-center gap-2">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite
-                </button>
+                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline inline-flex items-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</button>
             </div>
         </div>
     </main>
@@ -535,23 +405,12 @@
             <h1 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-8">Impressum</h1>
             <div class="prose prose-sage text-gray-600">
                 <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Angaben gemäß § 5 TMG</h3>
-                <p>Hans-Helmut Nölting<br>Praxis für Physiotherapie<br>Gothaer Str. 1<br>56075 Koblenz</p>
-                
+                <p>Physio Fit Praxis<br>Max Mustermann<br>Musterstraße 123<br>10115 Berlin</p>
                 <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Kontakt</h3>
-                <p>Telefon: 0261 / 56 57 5<br>E-Mail: hans.noelting@tonline.de</p>
-                
-                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Berufsbezeichnung und berufsrechtliche Regelungen</h3>
-                <p>Berufsbezeichnung: Physiotherapeut (verliehen in der Bundesrepublik Deutschland)<br>
-                Zuständige Aufsichtsbehörde: Gesundheitsamt Koblenz</p>
-                
-                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Streitschlichtung</h3>
-                <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr.<br>
-                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                <p>Telefon: 030 / 123 456 78<br>E-Mail: info@physiofit-muster.de</p>
             </div>
             <div class="mt-12">
-                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline flex items-center gap-2">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite
-                </button>
+                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline flex items-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</button>
             </div>
         </div>
     </main>
@@ -563,23 +422,12 @@
             <div class="prose prose-sage text-gray-600">
                 <p class="mb-4">Stand: 2026</p>
                 <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">1. Datenschutz auf einen Blick</h3>
-                <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
-                
-                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">2. Hosting</h3>
-                <p class="mb-4">Wir hosten die Inhalte unserer Website bei einem externen Anbieter. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert.</p>
-
-                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">3. Allgemeine Hinweise und Pflichtinformationen</h3>
-                <p class="mb-4"><strong>Datenschutz:</strong> Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften.</p>
-                <p class="mb-4"><strong>Hinweis zur verantwortlichen Stelle:</strong><br>Hans-Helmut Nölting<br>Gothaer Str. 1<br>56075 Koblenz</p>
-                
-                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">4. Datenerfassung auf dieser Website</h3>
-                <p class="mb-4"><strong>Cookies:</strong> Unsere Internetseiten verwenden so genannte „Cookies“. Cookies sind kleine Textdateien und richten auf Ihrem Endgerät keinen Schaden an.</p>
-                <p class="mb-4"><strong>Kontaktanfragen:</strong> Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert.</p>
+                <p class="mb-4">Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften.</p>
+                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-2">Verantwortliche Stelle</h3>
+                <p class="mb-4">Physio Fit Praxis<br>Max Mustermann<br>Musterstraße 123<br>10115 Berlin</p>
             </div>
             <div class="mt-12">
-                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline flex items-center gap-2">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite
-                </button>
+                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline flex items-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</button>
             </div>
         </div>
     </main>
@@ -590,51 +438,21 @@
             <div class="text-center mb-12">
                 <span class="inline-block py-1 px-3 rounded-full bg-sage-100 text-sage-700 text-sm font-semibold tracking-wide mb-4">Jobs & Karriere</span>
                 <h1 class="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">Werde Teil unseres Teams</h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Wir suchen Verstärkung für unsere Praxis in Koblenz.
-                </p>
             </div>
 
-            <!-- Job Offering -->
-            <div class="bg-white border border-gray-100 rounded-2xl shadow-lg p-8 mb-8 transition-transform hover:-translate-y-1">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Physiotherapeut (m/w/d)</h3>
-                        <p class="text-sage-600 font-medium mt-1">Vollzeit / Teilzeit • Koblenz</p>
-                    </div>
-                    <span class="bg-sage-100 text-sage-700 px-4 py-2 rounded-lg text-sm font-bold">Ab sofort</span>
-                </div>
-                <div class="space-y-4 mb-8">
-                    <p class="text-gray-600"><strong>Das bringst du mit:</strong></p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-1 ml-2">
-                        <li>Abgeschlossene Ausbildung als Physiotherapeut/in</li>
-                        <li>Fortbildung in Manueller Therapie (wünschenswert)</li>
-                        <li>Freude an der Arbeit mit Menschen</li>
-                        <li>Teamfähigkeit und Zuverlässigkeit</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-sand-50 p-6 rounded-xl border border-sand-100">
+            <div class="bg-white border border-gray-100 rounded-2xl shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Physiotherapeut (m/w/d)</h3>
+                <p class="text-gray-600 mb-8">Wir suchen Verstärkung für unsere moderne Praxis.</p>
+                <div class="bg-sand-50 p-6 rounded-xl">
                     <h4 class="font-bold text-gray-900 mb-2">Interesse geweckt?</h4>
-                    <p class="text-gray-600 mb-4">Ruf uns einfach an oder komm vorbei.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <!-- Changed from "Bewerbung senden" button to simple phone number display -->
-                        <div class="bg-sage-500 text-white px-6 py-2 rounded-lg font-medium flex items-center gap-2 cursor-default">
-                            <i data-lucide="phone" class="w-4 h-4"></i> 0261 / 56 57 5
-                        </div>
+                    <p class="text-gray-600 mb-4">Ruf uns einfach an oder sende uns eine E-Mail.</p>
+                    <div class="bg-sage-500 text-white px-6 py-2 rounded-lg font-medium inline-flex items-center gap-2 cursor-default">
+                        <i data-lucide="phone" class="w-4 h-4"></i> 030 / 123 456 78
                     </div>
                 </div>
             </div>
-
-            <div class="text-center mt-12">
-                <p class="text-gray-500 mb-4">Kein passendes Stellenangebot dabei?</p>
-                <p class="text-gray-600">Wir freuen uns auch über deine <strong>Initiativbewerbung</strong>!</p>
-            </div>
-            
             <div class="mt-12 text-center">
-                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline inline-flex items-center gap-2">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite
-                </button>
+                <button onclick="navigateTo('home')" class="text-sage-600 font-medium hover:underline inline-flex items-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Zurück zur Startseite</button>
             </div>
         </div>
     </main>
@@ -646,43 +464,33 @@
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-4">
                         <i data-lucide="activity" class="text-sage-400 w-6 h-6"></i>
-                        <span class="font-display font-bold text-2xl text-white">Physio<span class="text-sage-400">Nölting</span></span>
+                        <span class="font-display font-bold text-2xl text-white">PhysioFit</span>
                     </div>
-                    <p class="text-sage-200 max-w-xs leading-relaxed">
-                        Ihre Partner für Gesundheit und Bewegung in Koblenz.
-                    </p>
+                    <p class="text-sage-200 max-w-xs">Ihre Partner für Gesundheit und Bewegung.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-white mb-4">Links</h4>
                     <ul class="space-y-2">
-                        <li><button onclick="navigateTo('leistungen-detail')" class="hover:text-white transition-colors text-left">Leistungen</button></li>
-                        <!-- Updated Link in Footer -->
-                        <li><button onclick="navigateTo('ueber-uns-detail')" class="hover:text-white transition-colors text-left">Über uns</button></li>
-                        <li><button onclick="navigateTo('home', 'kontakt')" class="hover:text-white transition-colors text-left">Kontakt</button></li>
-                        <li><button onclick="navigateTo('karriere')" class="hover:text-white transition-colors text-left">Karriere</button></li>
+                        <li><button onclick="navigateTo('leistungen-detail')" class="hover:text-white">Leistungen</button></li>
+                        <li><button onclick="navigateTo('ueber-uns-detail')" class="hover:text-white">Über uns</button></li>
+                        <li><button onclick="navigateTo('home', 'kontakt')" class="hover:text-white">Kontakt</button></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-white mb-4">Rechtliches</h4>
                     <ul class="space-y-2">
-                        <li><button onclick="navigateTo('impressum')" class="hover:text-white transition-colors text-left">Impressum</button></li>
-                        <li><button onclick="navigateTo('datenschutz')" class="hover:text-white transition-colors text-left">Datenschutz</button></li>
+                        <li><button onclick="navigateTo('impressum')" class="hover:text-white">Impressum</button></li>
+                        <li><button onclick="navigateTo('datenschutz')" class="hover:text-white">Datenschutz</button></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-sage-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-sm text-sage-400">&copy; 2026 Physiotherapie Nölting. Alle Rechte vorbehalten.</p>
-                <div class="flex gap-4">
-                    <!-- Social Media Links entfernt, da nicht bekannt -->
-                </div>
+            <div class="border-t border-sage-800 pt-8 flex justify-between items-center">
+                <p class="text-sm text-sage-400">&copy; 2026 Physio Fit Praxis.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // --- OFFLINE ICONS SCRIPT (GDPR KONFORM) ---
-        // Dieses Script ersetzt die externe Lucide-Bibliothek durch lokale SVG-Pfade.
         const icons = {
             'activity': '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />',
             'menu': '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
@@ -704,10 +512,7 @@
             'heart-handshake': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="M18 15v2.25a2.75 2.75 0 0 1-5.5 0v-2.25"/><path d="M11 9l2.33 2.33a2.5 2.5 0 0 1 0 3.54l-2 2a2.5 2.5 0 0 1-3.54 0l-2-2a2.5 2.5 0 0 1 0-3.54L11 9Z"/>',
             'thermometer-sun': '<path d="M12 9a4 4 0 0 0-2 7.5M12 3v2M6.6 18.4l-1.4 1.4M18 14h2M6 14H4M10 6a4 4 0 1 1 8 0 4 4 0 0 1-8 0M11.3 5.3L9.9 3.9M18.4 6.6l1.4-1.4M14 18v2M20 18.4l1.4 1.4M3.9 9.9 5.3 11.3"/>',
             'zap': '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
-            'arrow-left': '<line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>',
-            'instagram': '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>',
-            'facebook': '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
-            'linkedin': '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>'
+            'arrow-left': '<line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>'
         };
 
         const lucide = {
@@ -725,7 +530,7 @@
                         svg.setAttribute('stroke-width', '2');
                         svg.setAttribute('stroke-linecap', 'round');
                         svg.setAttribute('stroke-linejoin', 'round');
-                        svg.classList.add(...el.classList); // Übernimmt Klassen (Größe, Farbe)
+                        svg.classList.add(...el.classList);
                         svg.innerHTML = icons[iconName];
                         el.replaceWith(svg);
                     }
@@ -733,66 +538,38 @@
             }
         };
 
-        // Initialize Icons
         lucide.createIcons();
 
-        // Core View Update Logic (DOM Manipulation only)
         function updateView(pageId, sectionId = null) {
-            // Hide all pages
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show requested page
+            document.querySelectorAll('.page-content').forEach(page => page.classList.remove('active'));
             const targetPage = document.getElementById('page-' + pageId);
-            if(targetPage) {
-                targetPage.classList.add('active');
-            } else {
-                // Fallback to home if page doesn't exist
-                const home = document.getElementById('page-home');
-                if(home) home.classList.add('active');
-            }
+            if(targetPage) targetPage.classList.add('active');
+            else document.getElementById('page-home').classList.add('active');
 
-            // Scroll Logic
             if (sectionId) {
                 setTimeout(() => {
                     const section = document.getElementById(sectionId);
-                    if (section) {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    if (section) section.scrollIntoView({ behavior: 'smooth' });
                 }, 100);
             } else {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Mobile Menu Close logic
             const menu = document.getElementById('mobile-menu');
-            if (!menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-            }
+            if (!menu.classList.contains('hidden')) menu.classList.add('hidden');
         }
 
-        // Public Navigation Function (called by clicks)
         function navigateTo(pageId, sectionId = null) {
             updateView(pageId, sectionId);
-            
-            // Update URL Hash for persistence
             let hash = pageId;
-            if (sectionId) {
-                hash += '/' + sectionId;
-            }
+            if (sectionId) hash += '/' + sectionId;
             history.pushState(null, null, '#' + hash);
         }
 
-        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Sticky Navbar Effect on Scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
@@ -804,21 +581,16 @@
             }
         });
 
-        // Handle Page Load (Refresh Persistence)
         window.addEventListener('load', () => {
-            const hash = window.location.hash.substring(1); // Remove '#'
+            const hash = window.location.hash.substring(1);
             if (hash) {
                 const parts = hash.split('/');
-                const pageId = parts[0];
-                const sectionId = parts[1] || null;
-                updateView(pageId, sectionId);
+                updateView(parts[0], parts[1] || null);
             } else {
-                // Default State
                 updateView('home');
             }
         });
 
-        // Handle Back/Forward Browser Buttons
         window.addEventListener('popstate', () => {
              const hash = window.location.hash.substring(1);
              if (hash) {
