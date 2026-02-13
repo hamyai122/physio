@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,7 +149,7 @@
                         Individuelle Physiotherapie und Krankengymnastik in persönlicher Atmosphäre. Wir unterstützen Sie auf Ihrem Weg zu mehr Beweglichkeit und Wohlbefinden.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300">
-                        <button onclick="document.getElementById('kontakt').scrollIntoView({behavior: 'smooth'})" class="bg-sage-500 hover:bg-sage-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <button onclick="navigateTo('home', 'kontakt')" class="bg-sage-500 hover:bg-sage-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
                             <span>Termin vereinbaren</span>
                             <i data-lucide="phone" class="w-5 h-5"></i>
                         </button>
@@ -163,7 +163,7 @@
         </section>
 
         <!-- Öffnungszeiten Section -->
-        <section id="oeffnungszeiten" class="py-16 bg-sage-50 relative">
+        <section id="oeffnungszeiten" class="py-16 bg-sage-50 relative scroll-mt-28">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-white rounded-3xl shadow-lg border border-sage-100 overflow-hidden">
                     <div class="grid grid-cols-1 md:grid-cols-2">
@@ -220,7 +220,7 @@
         </section>
 
         <!-- Leistungen Vorschau -->
-        <section id="leistungen" class="py-20 bg-white relative">
+        <section id="leistungen" class="py-20 bg-white relative scroll-mt-28">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-sage-600 font-semibold tracking-wide uppercase text-sm mb-2">Unser Angebot</h2>
@@ -262,7 +262,7 @@
         </section>
 
         <!-- Kontakt Section -->
-        <section id="kontakt" class="py-20 bg-white">
+        <section id="kontakt" class="py-20 bg-white scroll-mt-28">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-sage-600 font-semibold tracking-wide uppercase text-sm mb-2">Kontakt</h2>
@@ -541,22 +541,37 @@
         lucide.createIcons();
 
         function updateView(pageId, sectionId = null) {
-            document.querySelectorAll('.page-content').forEach(page => page.classList.remove('active'));
+            // 1. Determine if we are changing pages
+            const activePage = document.querySelector('.page-content.active');
             const targetPage = document.getElementById('page-' + pageId);
+            const isPageChange = activePage !== targetPage;
+
+            // 2. Hide all pages, show target page
+            document.querySelectorAll('.page-content').forEach(page => page.classList.remove('active'));
             if(targetPage) targetPage.classList.add('active');
             else document.getElementById('page-home').classList.add('active');
 
-            if (sectionId) {
-                setTimeout(() => {
-                    const section = document.getElementById(sectionId);
-                    if (section) section.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
+            // 3. Close mobile menu
             const menu = document.getElementById('mobile-menu');
             if (!menu.classList.contains('hidden')) menu.classList.add('hidden');
+
+            // 4. Scroll Logic
+            if (sectionId) {
+                // If scrolling to a specific section (e.g. Kontakt)
+                // Use 'auto' (instant) if we just changed pages to avoid "scroll from top" animation
+                // Use 'smooth' if we are on the same page
+                const behavior = isPageChange ? 'auto' : 'smooth';
+                
+                requestAnimationFrame(() => {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: behavior, block: 'start' });
+                    }
+                });
+            } else {
+                // If just changing pages (e.g. to Impressum), jump to top instantly
+                window.scrollTo({ top: 0, behavior: 'auto' }); 
+            }
         }
 
         function navigateTo(pageId, sectionId = null) {
@@ -603,4 +618,3 @@
     </script>
 </body>
 </html>
-
